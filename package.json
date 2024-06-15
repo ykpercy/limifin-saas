@@ -15,7 +15,7 @@
         "schema": "src/libs/database/schema.prisma"
     },
     "dependencies": {
-        "@clerk/nextjs": "^4.29.7",
+        "@clerk/nextjs": "^4.31.3",
         "@hookform/resolvers": "^3.3.4",
         "@lemonsqueezy/lemonsqueezy.js": "^2.2.0",
         "@prisma/client": "^5.9.1",
