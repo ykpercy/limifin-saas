@@ -5,7 +5,7 @@ import {
     TooltipProviderComponent,
 } from '@/libs/providers';
 import { ThemeProvider } from '@/libs/providers/theme-provider';
-import { ClerkLoaded, ClerkLoading, ClerkProvider } from '@clerk/nextjs';
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
@@ -64,10 +64,13 @@ export default async function RootLayout({
                             enableSystem
                             disableTransitionOnChange
                         >
-                            <ClerkLoading>
-                                <Loading />
-                            </ClerkLoading>
-                            <ClerkLoaded>{children}</ClerkLoaded>
+                            <SignedOut>
+                                <SignInButton />
+                            </SignedOut>
+                            <SignedIn>
+                                <UserButton />
+                            </SignedIn>
+                            {children}
                             <ToastProvider />
                             <Analytics />
                             <GoogleAnalytics />
