@@ -7,9 +7,10 @@
         "build": "npm run prisma-generate && next build",
         "start": "npm run prisma-generate && next start",
         "lint": "npm run prisma-generate && next lint",
-        "prisma-generate": "npx prisma generate",
-        "prisma-studio": "npx prisma studio",
-        "prisma-migrate": "npx prisma migrate dev"
+        "prisma-generate": "npx dotenv -e .env.local -- prisma generate",
+        "prisma-studio": "npx dotenv -e .env.local -- prisma studio",
+        "prisma-migrate": "npx dotenv -e .env.local -- prisma migrate",
+        "production-build": "npx prisma generate && npx prisma migrate deploy && next build"
     },
     "prisma": {
         "schema": "src/libs/database/schema.prisma"
@@ -18,7 +19,7 @@
         "@clerk/nextjs": "^4.31.3",
         "@hookform/resolvers": "^3.3.4",
         "@lemonsqueezy/lemonsqueezy.js": "^2.2.0",
-        "@prisma/client": "^5.9.1",
+        "@prisma/client": "^5.15.0",
         "@radix-ui/react-accordion": "^1.1.2",
         "@radix-ui/react-alert-dialog": "^1.0.5",
         "@radix-ui/react-avatar": "^1.0.4",
@@ -75,6 +76,7 @@
         "@typescript-eslint/eslint-plugin": "^6.13.2",
         "@typescript-eslint/parser": "^6.13.2",
         "autoprefixer": "^10.4.19",
+        "dotenv-cli": "^7.4.2",
         "eslint": "^8",
         "eslint-config-next": "14.1.4",
         "eslint-config-prettier": "^9.0.0",
