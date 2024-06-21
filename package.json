@@ -3,13 +3,13 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "npm run prisma-generate && npm run prisma-migrate && next dev",
+        "dev": "npm run prisma-migrate && next dev",
         "build": "npm run prisma-generate && next build",
         "start": "npm run prisma-generate && next start",
         "lint": "npm run prisma-generate && next lint",
         "prisma-generate": "npx dotenv -e .env.local -- prisma generate",
         "prisma-studio": "npx dotenv -e .env.local -- prisma studio",
-        "prisma-migrate": "npx dotenv -e .env.local -- prisma migrate",
+        "prisma-migrate": "npx dotenv -e .env.local -- prisma migrate dev",
         "production-build": "npm run prisma-generate && npm run prisma-migrate deploy && next build"
     },
     "prisma": {
